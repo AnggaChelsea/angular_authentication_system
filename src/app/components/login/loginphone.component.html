@@ -1,0 +1,20 @@
+<div class="row pt-5 ">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3>Login</h3>
+            </div>
+            <div class="card-body ">
+                <form action="" class="form">
+                    <div class="form-group pt-2">
+                      <label for="phone">Phone</label>
+                        <input [(ngModel)]="loginuser.phone" name="phone" type="text" class="form-control" required="true" placeholder="ex: 08572424823">
+                    </div>
+                  <div class="buttonclass pt-3">
+                    <button (click)="loginUserPhone()" class="btn btn-primary">Login</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

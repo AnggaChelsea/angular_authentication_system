@@ -1,0 +1,25 @@
+<div class="row pt-5 ">
+    <div class="col-md-6 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header">
+                <h3>Login</h3>
+            </div>
+            <div class="card-body ">
+                <form action="" class="form">
+                    <div class="form-group pt-2">
+                      <label for="email">Email</label>
+                        <input [(ngModel)]="signinuser.email" name="email" type="text" class="form-control" placeholder="ex: jhone@gmail.com">
+                    </div>
+                  <div class="form-group  pt-2">
+                    <label for="password">password</label>
+                      <input [(ngModel)]="signinuser.password" name="password" type="text" class="form-control" placeholder="********">
+                  </div>
+                  <div class="buttonclass pt-3">
+                    <button (click)="signifunctionUser()" class="btn btn-primary">Login</button>
+                    <button routerLink="/loginphone" class="btn btn-outline-primary phonee">with phone</button>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
