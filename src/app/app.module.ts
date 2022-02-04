@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LoginPhoneComponent} from './components/login/loginphone.component';
 
 import {AuthService} from './service/auth.service';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AuthService} from './service/auth.service';
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
-    LoginPhoneComponent
+    LoginPhoneComponent,
+    ProfileComponent
   ],
   imports: [
   BrowserModule,

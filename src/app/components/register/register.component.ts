@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  registeruserdata = {
+  registeruserdata:any = {
     email: '',
     password: '',
     phone: '',
   };
-  user: any[] = [];
-  buttonact = true;
+  user: any;
+  buttonhidden:any;
   datausernest: any[] = [];
   constructor(private auth: AuthService, private router: Router) {}
 
@@ -35,22 +35,35 @@ export class RegisterComponent implements OnInit {
    
   }
 
-  registeruser() {
+  registeruser(event: Event) {
     this.auth.registerUser(this.registeruserdata).subscribe((res: any) => {
       this.user = res;
+      this.registeruserdata.phone = (<HTMLInputElement>event.target).value
+      if(this.datausernest.includes(this.registeruserdata.phone)){
+        alert('Phone Number Already Exist')
+        this.buttonhidden = false
+      }
       console.log(this.user);
       this.router.navigate(['/login']);
     });
   }
-  buttonhidden() {
-    if (
-      this.registeruserdata.email === '' ||
-      this.registeruserdata.password === '' ||
-      this.registeruserdata.phone === ''
-    ) {
-      return true;
-    } else {
-      return false;
-    }
+
+  onSubmit() {
+    this.auth.registerUser(this.registeruserdata).subscribe((res: any) => {
+      this.user = res;
+      if(this.datausernest.includes(this.registeruserdata.phone)){
+        alert('Phone Number Already Exist')
+        this.buttonhidden = false
+      }
+      console.log(this.user);
+      this.router.navigate(['/login']);
+    });
   }
+ hiddenbutton(){
+   if(this.registeruserdata.email === '' || this.registeruserdata.password === '' || this.registeruserdata.phone === ''){
+      this.buttonhidden = true
+   }else{
+      this.buttonhidden = false
+   }
+ }
 }

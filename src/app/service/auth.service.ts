@@ -15,10 +15,25 @@ export class AuthService {
   login(user:any){
     return this.http.post<any>(`${environment.baseUrlNode}login`,user);
   }
+  loginbyphone(user:any){
+    return this.http.post<any>(`${environment.baseUrlNode}loginphone`, user);
+
+  }
   getUserProfile(){
     return this.http.get<any>(`${environment.baseUrlNode}profile`);
   }
   getdatausernest(){
     return this.http.get<any>(`${this.urls}`);
+  }
+
+  myprofile(id:any){
+    return this.http.get<any>(`${environment.baseUrlNode}profile/${id}`);
+  }
+
+  isLogin(){
+    return !!localStorage.getItem('token');
+  }
+  addSaldo(saldo:any){
+    return this.http.put<any>(`${environment.baseUrlNode}addsaldo`,saldo);
   }
 }

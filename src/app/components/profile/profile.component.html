@@ -1,0 +1,24 @@
+<div class="container justify-content-center">
+        <div class="card text-white bg-primary w-25">
+          <img class="card-img-top" src="holder.js/100px180/" alt="">
+          <div class="card-body">
+            <p class="card-title"></p>
+            <p class="card-text">{{dataprofile.data.email}}</p>
+            your saldo <button class="btn btn-outline-warning">Rp: {{dataprofile.data.saldo}}</button>
+          </div>
+        </div>
+        <div class="card w-25">
+            <div class="card-body">
+                <h4 class="card-title">Topup Saldo</h4>
+                <button class="btn btn-primary" (click)="showtextnya()">Topup Now</button>
+            </div>
+            <form action="" *ngIf="showtext">
+                <div class="form-group">
+                    <label for="">Masukan Nominal</label>
+                    <input type="text" class="form-control" id="">
+                </div>
+                <button type="submit" class="btn btn-primary">Topup</button>
+            </form>
+        </div>
+</div>
+
