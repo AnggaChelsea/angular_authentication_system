@@ -17,7 +17,7 @@
                 <div class="form-group  pt-2">
                   <label for="phone">phone</label>
                   <input [(ngModel)]="registeruserdata.phone" type="text" name="phone" id="" class="form-control" placeholder="ex: 08572467283" aria-describedby="helpId">
-                  <small *ngIf="this.datausernest">Phone already exist</small>
+                  <!-- <small *ngIf="datausernest.Phone">Phone already exist</small> -->
                 </div>
                 <div class="buttonclass pt-3">
                   <button (click)="registeruser($event)" class="btn btn-warning" [disabled]="hiddenbutton()">Signup</button>

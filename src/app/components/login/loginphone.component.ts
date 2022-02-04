@@ -18,7 +18,7 @@ export class LoginPhoneComponent implements OnInit {
   loginUserPhone(){
     this.authservice.loginbyphone(this.loginuser).subscribe((res:any)=>{
       console.log(res)
-      this.router.navigate(['/profile/', res.id])
+      this.router.navigate(['/profile', res.id]);
     })
   }
  
